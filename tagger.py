@@ -47,12 +47,12 @@ def describe_image(image_path, api_key):
         )
 
         completion = client.chat.completions.create(
-            model="qwen-vl-plus",
+            model="qwen-vl-plus-latest",
             messages=[
                 {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": "请使用纯英语，适当的描述图片内容，不需要过于详细，但是需要确保描述完整："},
+                        {"type": "text", "text": "请使用纯英语描述图片内容，无需过长："},
                         {"type": "image_url", "image_url": {"url": base64_image}}
                     ]
                 }
